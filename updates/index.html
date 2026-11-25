@@ -312,7 +312,8 @@ animation:ggdrift 28s ease-in-out infinite alternate}
 @media (min-width:900px){
  .x-list:not([hidden]){display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:start}
  .x-list>*+*{margin-top:0!important}
- .x-list>.x-ad,.x-list>:not(.x-card){grid-column:1/-1}
+ .x-list>.x-ad:empty{display:none}
+ .x-list>:not(.x-card):not(.x-ad:empty){grid-column:1/-1}
 }
 @media (min-width:1400px){
  .x-list:not([hidden]){grid-template-columns:repeat(3,minmax(0,1fr))}
