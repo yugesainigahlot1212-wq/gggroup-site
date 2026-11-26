@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TP42X7MY44"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TP42X7MY44');</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>फोटो क्रॉप करें (Crop image) — फ्री ऑनलाइन टूल | GG Group ब्यावर</title>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1647714184512959" crossorigin="anonymous"></script>
+<meta name="description" content="फोटो का फालतू हिस्सा काटें — फ्री या पासपोर्ट जैसा 3.5:4.5, 1:1, सिग्नेचर अनुपात। मोबाइल पर उंगली से। मुफ़्त, बिना अपलोड।">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://gggroup.info/tools/image-crop/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="फोटो क्रॉप करें (Crop image) — फ्री ऑनलाइन टूल | GG Group ब्यावर">
+<meta property="og:description" content="फोटो का फालतू हिस्सा काटें — फ्री या पासपोर्ट जैसा 3.5:4.5, 1:1, सिग्नेचर अनुपात। मोबाइल पर उंगली से। मुफ़्त, बिना अपलोड।">
+<meta property="og:url" content="https://gggroup.info/tools/image-crop/">
+<meta property="og:image" content="https://gggroup.info/gg-hero.jpg">
+<meta name="theme-color" content="#0a2a66">
+<meta name="color-scheme" content="light">
+<link rel="stylesheet" href="/tools/assets/tools.css?v=20261126">
+</head>
+<body>
+<div class="t-top"><div class="t-top__in"><span>Gopala &amp; Gahlot Group · ब्यावर</span><span>•</span><a href="https://wa.me/919024410157" target="_blank" rel="noopener">WhatsApp 90244 10157</a></div></div>
+<header class="t-head"><div class="t-head__in">
+<a class="t-logo" href="/"><span class="t-logo__mark" aria-hidden="true">GG</span><span><span class="t-logo__name">Gopala &amp; Gahlot Group</span><span class="t-logo__tag">फ्री ऑनलाइन टूल्स · Free tools</span></span></a>
+<nav class="t-nav" aria-label="मेन्यू"><a href="/">🏠 होम <span class="en">Home</span></a><a href="/tools/">🧰 सभी टूल्स <span class="en">All tools</span></a></nav>
+</div></header>
+<main class="t-wrap">
+<p class="t-crumb"><a href="/">होम</a> › <a href="/tools/">टूल्स</a> › <a href="/tools/#image">फोटो / इमेज टूल्स</a></p>
+<h1>✂️ फोटो क्रॉप करें<small>Crop image — मुफ़्त, बिना लॉगिन</small></h1>
+<p class="t-lead">पूरी फोटो में से सिर्फ़ चेहरा या सिग्नेचर वाला हिस्सा काटकर अलग करें।</p>
+<p class="t-safe"><span aria-hidden="true">🔒</span><span><b>आपकी फाइल आपके फ़ोन/कंप्यूटर से बाहर नहीं जाती।</b> सारा काम आपके ब्राउज़र में ही होता है — कोई अपलोड नहीं। <span class="en">Your files never leave your device.</span></span></p>
+<section class="t-card" aria-label="फोटो क्रॉप करें">
+<label class="t-drop" id="pZone"><input type="file" id="pIn" accept="image/jpeg,image/png,image/webp,.jpg,.jpeg,.png,.webp"><b>🖼️ फोटो चुनें</b><small>या यहाँ खींचकर छोड़ें · Tap to choose or drop</small></label><p class="t-note" id="info"></p><div class="t-row" style="margin-top:10px"><label class="t-f" for="ar">अनुपात <span class="en">Aspect ratio</span><select id="ar"><option value="0" selected>फ्री (कोई भी)</option><option value="0.7778">फोटो 3.5 : 4.5</option><option value="1">चौकोर 1 : 1</option><option value="0.75">3 : 4</option><option value="1.3333">4 : 3</option><option value="3">सिग्नेचर 3 : 1</option><option value="2.6667">सिग्नेचर 4 : 1.5</option></select></label><label class="t-f" for="fmt">फॉर्मेट <span class="en">Format</span><select id="fmt"><option value="jpg" selected>JPG</option><option value="png">PNG</option></select></label></div><p class="t-note">डिब्बे को खिसकाएँ; लाल गोले से छोटा-बड़ा करें; बाहर खींचकर नया डिब्बा बनाएँ।</p><div style="text-align:center"><div class="t-cropwrap" id="wrap" hidden><canvas id="cv"></canvas><div class="t-cropbox" id="box"><i id="hdl"></i></div></div></div><p class="t-note" id="sz"></p><div class="t-actions"><button class="t-btn" id="go" type="button">✂️ क्रॉप करें</button></div><div class="t-err" id="err" role="alert"></div><div class="t-res" id="res" aria-live="polite"></div>
+</section>
+<section class="t-card t-how"><h2>कैसे इस्तेमाल करें <span class="en">How to use</span></h2><ol><li>फोटो चुनें — उस पर एक डिब्बा (क्रॉप बॉक्स) दिखेगा।</li><li>ज़रूरत हो तो अनुपात चुनें (जैसे फोटो 3.5:4.5), डिब्बे को खिसकाकर सही जगह लाएँ और लाल गोले से छोटा-बड़ा करें।</li><li>“क्रॉप करें” दबाकर डाउनलोड करें।</li></ol></section>
+<div class="t-cta"><p>फॉर्म भरवाना है? ई-मित्र / CSC के काम के लिए हमसे बात करें।<br><span style="font-weight:500;opacity:.9">Need a form filled? Message us.</span></p><a class="t-btn t-btn--wa" href="https://wa.me/919024410157?text=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87%2C%20%E0%A4%AE%E0%A5%81%E0%A4%9D%E0%A5%87%20%E0%A4%AB%E0%A5%89%E0%A4%B0%E0%A5%8D%E0%A4%AE%20%E0%A4%AD%E0%A4%B0%E0%A4%B5%E0%A4%BE%E0%A4%A8%E0%A4%BE%20%E0%A4%B9%E0%A5%88" target="_blank" rel="noopener">💬 फॉर्म भरवाना है? WhatsApp करें</a></div>
+<section class="t-card"><h2>दूसरे काम के टूल्स <span class="en">Related tools</span></h2><div class="t-rel"><a href="/tools/photo-kb-reducer/">📷 फोटो का साइज़ KB में कम करें</a><a href="/tools/image-resize/">📐 फोटो का माप बदलें</a><a href="/tools/image-convert/">🔁 JPG ↔ PNG बदलें</a><a href="/tools/photo-sign-join/">🧩 फोटो + सिग्नेचर एक साथ जोड़ें</a><a href="/tools/">🧰 सभी टूल्स</a></div></section>
+</main>
+<footer class="t-foot"><div class="t-foot__in">
+<p style="margin:0;font-weight:700;color:#fff;font-size:16px">Gopala &amp; Gahlot Group</p>
+<nav aria-label="फुटर लिंक"><a href="/">होम</a><a href="/tools/">सभी टूल्स</a><a href="/about/">हमारे बारे में</a><a href="/contact/">संपर्क</a><a href="/privacy-policy/">प्राइवेसी पॉलिसी</a><a href="/disclaimer/">डिस्क्लेमर</a><a href="/terms/">नियम व शर्तें</a><a href="https://wa.me/919024410157" target="_blank" rel="noopener">WhatsApp 90244 10157</a></nav>
+<p class="t-priv">निजी सेवा केंद्र — सरकारी वेबसाइट नहीं</p>
+<p style="margin:8px 0 0">ये टूल्स मुफ़्त हैं और जानकारी के लिए हैं। नतीजा जमा करने से पहले फॉर्म/विभाग के नियम ज़रूर जाँचें। <span class="en" style="color:#c9d3ea">Free tools for general use; check the official rules before submitting.</span></p>
+<p style="margin:8px 0 0">© 2026 Gopala &amp; Gahlot Group · Vidyasagar Nilay, Diggi Mohalla, Beawar, Rajasthan 305901</p>
+</div></footer>
+<a class="t-wa-float" href="https://wa.me/919024410157" target="_blank" rel="noopener" aria-label="WhatsApp पर बात करें">💬</a>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "फोटो क्रॉप करें (Crop image)", "url": "https://gggroup.info/tools/image-crop/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}, "inLanguage": "hi", "provider": {"@type": "Organization", "name": "Gopala & Gahlot Group", "url": "https://gggroup.info/"}}</script>
+<script src="/tools/assets/tools.js?v=20261126"></script>
+<script>
+(function(){"use strict";var GG=window.GG,$=GG.$;
+
+var img=null,file=null;
+async function pick(f){GG.err('err');GG.html('res','');
+  if(!GG.isImage(f)){GG.err('err','“'+f.name+'” फोटो नहीं है। JPG, PNG या WEBP चुनें।');return false;}
+  try{img=await GG.loadImage(f);file=f;$('info').innerHTML='🖼️ <b>'+GG.esc(f.name)+'</b> · '+GG.kb(f.size)+' · '+img.naturalWidth+'×'+img.naturalHeight+' px';return true;}
+  catch(e){img=null;file=null;GG.err('err',e.message);return false;}}
+function preview(blob,extra){var u=URL.createObjectURL(blob);return '<div class="t-preview"><img src="'+u+'" alt="नतीजा फोटो"></div>'+(extra||'');}
+
+var cv=$('cv'),box=$('box'),wrap=$('wrap'),k=1,r={x:0,y:0,w:0,h:0},drag=null;
+function ar(){return +$('ar').value;}
+function clamp(){var W=cv.clientWidth,H=cv.clientHeight;r.w=Math.max(20,Math.min(r.w,W));r.h=Math.max(20,Math.min(r.h,H));r.x=Math.max(0,Math.min(r.x,W-r.w));r.y=Math.max(0,Math.min(r.y,H-r.h));}
+function draw(){clamp();box.style.left=r.x+'px';box.style.top=r.y+'px';box.style.width=r.w+'px';box.style.height=r.h+'px';var s=img.naturalWidth/cv.clientWidth;$('sz').textContent='कटने वाला हिस्सा: '+Math.round(r.w*s)+' × '+Math.round(r.h*s)+' px';}
+function initBox(){var W=cv.clientWidth,H=cv.clientHeight,a=ar();if(a){var w=Math.min(W*0.8,H*0.8*a);r={w:w,h:w/a};}else r={w:W*0.8,h:H*0.8};r.x=(W-r.w)/2;r.y=(H-r.h)/2;draw();}
+GG.drop('pZone','pIn',async function(fs){if(!(await pick(fs[0])))return;var mw=Math.min(img.naturalWidth,1600);cv.width=mw;cv.height=Math.round(img.naturalHeight*mw/img.naturalWidth);
+  cv.getContext('2d').drawImage(img,0,0,cv.width,cv.height);wrap.hidden=false;requestAnimationFrame(initBox);});
+$('ar').onchange=function(){if(img)initBox();};
+function pt(e){var b=cv.getBoundingClientRect();return{x:e.clientX-b.left,y:e.clientY-b.top};}
+wrap.addEventListener('pointerdown',function(e){if(!img)return;e.preventDefault();var p=pt(e);wrap.setPointerCapture(e.pointerId);
+  if(e.target===$('hdl'))drag={m:'rs',p:p,r:Object.assign({},r)};
+  else if(p.x>=r.x&&p.x<=r.x+r.w&&p.y>=r.y&&p.y<=r.y+r.h)drag={m:'mv',p:p,r:Object.assign({},r)};
+  else drag={m:'new',p:p,r:{x:p.x,y:p.y,w:0,h:0}};});
+wrap.addEventListener('pointermove',function(e){if(!drag)return;var p=pt(e),dx=p.x-drag.p.x,dy=p.y-drag.p.y,a=ar();
+  if(drag.m==='mv'){r.x=drag.r.x+dx;r.y=drag.r.y+dy;}
+  else{var x0=drag.m==='rs'?drag.r.x:Math.min(drag.p.x,p.x),y0=drag.m==='rs'?drag.r.y:Math.min(drag.p.y,p.y);
+    var w=drag.m==='rs'?drag.r.w+dx:Math.abs(dx),h=drag.m==='rs'?drag.r.h+dy:Math.abs(dy);
+    if(a){h=w/a;var maxH=cv.clientHeight-y0;if(h>maxH){h=maxH;w=h*a;}}
+    w=Math.min(w,cv.clientWidth-x0);if(a)h=w/a;r={x:x0,y:y0,w:Math.max(20,w),h:Math.max(20,h)};}
+  draw();});
+['pointerup','pointercancel'].forEach(function(ev){wrap.addEventListener(ev,function(){drag=null;});});
+window.addEventListener('resize',function(){if(img&&!wrap.hidden)initBox();});
+$('go').onclick=async function(){GG.err('err');GG.html('res','');if(!img){GG.err('err','पहले फोटो चुनें।');return;}
+  var s=img.naturalWidth/cv.clientWidth,sx=Math.round(r.x*s),sy=Math.round(r.y*s),sw=Math.round(r.w*s),sh=Math.round(r.h*s);
+  sw=Math.min(sw,img.naturalWidth-sx);sh=Math.min(sh,img.naturalHeight-sy);
+  var png=$('fmt').value==='png',c=document.createElement('canvas');c.width=sw;c.height=sh;var x=c.getContext('2d');if(!png){x.fillStyle='#fff';x.fillRect(0,0,sw,sh);}
+  x.drawImage(img,sx,sy,sw,sh,0,0,sw,sh);
+  try{var blob=await GG.toBlob(c,png?'image/png':'image/jpeg',0.92);
+    GG.html('res','<div class="t-big">✅ '+sw+' × '+sh+' px</div>'+GG.kv([['साइज़',GG.kb(blob.size)]])+preview(blob));
+    var a=document.createElement('div');a.className='t-actions';a.appendChild(GG.dlButton(blob,GG.baseName(file.name)+'_crop'+(png?'.png':'.jpg')));$('res').appendChild(a);
+  }catch(e){GG.err('err',e.message);}
+};
+
+})();
+</script>
+</body>
+</html>
