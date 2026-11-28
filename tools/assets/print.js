@@ -296,16 +296,44 @@
   };
   P.jpg = async function (canvas, dpi, q) { var b = await w.GG.toBlob(canvas, "image/jpeg", q || 0.92); return dpi ? w.GG.jpegDpi(b, dpi) : b; };
   P.png = async function (canvas, dpi) { var b = await w.GG.toBlob(canvas, "image/png"); return dpi ? w.GG.pngDpi(b, dpi) : b; };
-  /* print a list of page images at exact paper size */
+  /* print a list of page images at exact paper size.
+     Printed from the page itself (not a hidden iframe): mobile Chrome / Safari ignore iframe.print()
+     and print the whole web page instead, which showed only the small preview. */
   P.print = function (blobs, wmm, hmm) {
-    var f = document.createElement("iframe"); f.style.cssText = "position:fixed;right:0;bottom:0;width:0;height:0;border:0"; document.body.appendChild(f);
-    var urls = blobs.map(function (b) { return URL.createObjectURL(b); });
-    var doc = f.contentDocument;
-    doc.open(); doc.write('<!doctype html><html><head><title>print</title><style>@page{size:' + wmm + 'mm ' + hmm + 'mm;margin:0}html,body{margin:0;padding:0}img{display:block;width:' + wmm + 'mm;height:' + hmm + 'mm;page-break-after:always;break-after:page}img:last-child{page-break-after:auto;break-after:auto}</style></head><body>' +
-      urls.map(function (u) { return '<img src="' + u + '">'; }).join("") + "</body></html>"); doc.close();
-    var imgs = doc.querySelectorAll("img"), left = imgs.length;
-    function go() { f.contentWindow.focus(); f.contentWindow.print(); setTimeout(function () { f.remove(); urls.forEach(URL.revokeObjectURL); }, 60000); }
-    Array.prototype.forEach.call(imgs, function (im) { if (im.complete) { if (--left === 0) go(); } else im.onload = im.onerror = function () { if (--left === 0) go(); }; });
+    var old = document.getElementById("gp-print"), oldCss = document.getElementById("gp-print-css");
+    if (old) { Array.prototype.forEach.call(old.querySelectorAll("img"), function (im) { URL.revokeObjectURL(im.src); }); old.remove(); }
+    if (oldCss) oldCss.remove();
+    var st = document.createElement("style"); st.id = "gp-print-css";
+    st.textContent = "#gp-print{display:none}@media print{@page{size:" + wmm + "mm " + hmm + "mm;margin:0}" +
+      "html,body{margin:0!important;padding:0!important;background:#fff!important;width:auto!important;height:auto!important;overflow:visible!important}" +
+      "body>*:not(#gp-print),ins.adsbygoogle,iframe{display:none!important}" +
+      "#gp-print{display:block!important;position:static!important}" +
+      "#gp-print img{display:block;width:" + wmm + "mm;height:" + hmm + "mm;margin:0;page-break-after:always;break-after:page;page-break-inside:avoid}" +
+      "#gp-print img:last-child{page-break-after:auto;break-after:auto}}";
+    var box = document.createElement("div"); box.id = "gp-print"; box.setAttribute("aria-hidden", "true");
+    var left = blobs.length;
+    function go() { setTimeout(function () { try { w.focus(); w.print(); } catch (e) {} }, 80); }
+    blobs.forEach(function (bl) {
+      var im = new Image(); im.alt = "";
+      im.onload = im.onerror = function () { if (--left === 0) go(); };
+      im.src = URL.createObjectURL(bl); box.appendChild(im);
+    });
+    document.head.appendChild(st); document.body.appendChild(box);
+    if (!blobs.length) go();
+  };
+  /* full-size result image (long-press on mobile saves the whole sheet, not a thumbnail) */
+  P.previewImg = function (blob, maxW, alt) {
+    var d = document.createElement("div"); d.className = "t-preview t-pv";
+    var im = new Image(); im.src = URL.createObjectURL(blob); im.alt = alt || "पूरी शीट";
+    im.style.cssText = "display:inline-block;width:auto;height:auto;max-width:min(100%," + (maxW || 460) + "px);max-height:560px;background:#fff;box-shadow:0 2px 10px rgba(10,42,102,.12)";
+    d.appendChild(im); return d;
+  };
+  /* secondary download (e.g. one single photo for online forms), kept apart from the sheet buttons */
+  P.extra = function (resId, note, blob, name, label) {
+    var p = document.createElement("p"); p.className = "t-note"; p.style.marginTop = "14px"; p.textContent = note;
+    var a = document.createElement("div"); a.className = "t-actions";
+    var b = w.GG.dlButton(blob, name, label); b.className = "t-btn t-btn--ghost t-btn--sm"; a.appendChild(b);
+    var r = w.GG.$(resId); r.appendChild(p); r.appendChild(a); return a;
   };
   P.actions = function (resId, items) {
     var a = document.createElement("div"); a.className = "t-actions";
