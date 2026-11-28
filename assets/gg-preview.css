@@ -1,0 +1,25 @@
+/* gggroup.info preview cards (see gg-preview.js) */
+[data-pv-t]{-webkit-touch-callout:none}
+.gg-pv-host{position:relative}
+.gg-pv-i{display:none}
+@media (hover:none){
+  .gg-pv-i{display:grid;place-items:center;position:absolute;top:4px;right:4px;width:24px;height:24px;border-radius:50%;
+    background:#eef2fa;border:1px solid #c9d3ea;color:#0a2a66;font:700 12px/1 Georgia,serif;font-style:italic;z-index:2;cursor:pointer}
+  .gg-pv-i::before{content:"";position:absolute;inset:-10px}
+}
+.gg-pv{position:fixed;z-index:9999;left:0;top:0;box-sizing:border-box;width:max-content;max-width:320px;padding:12px 14px;border-radius:12px;
+  background:#fff;color:#1b2333;border:1px solid #c9d3ea;border-top:4px solid #0a2a66;box-shadow:0 12px 32px rgba(10,42,102,.22);
+  font:14px/1.45 system-ui,-apple-system,"Segoe UI","Noto Sans Devanagari","Noto Sans",sans-serif;pointer-events:none;opacity:0;transform:translateY(4px);transition:opacity .12s,transform .12s}
+.gg-pv.is-on{opacity:1;transform:none}
+.gg-pv--touch{pointer-events:auto}
+.gg-pv p{margin:0}
+.gg-pv__h{font-size:15px;color:#0a2a66}
+.gg-pv__n{margin-top:4px!important;display:inline-block;padding:2px 8px;border-radius:999px;background:#0a2a66;color:#fff;font-size:12.5px;font-weight:700}
+.gg-pv__d{margin-top:6px!important;color:#3b4660}
+.gg-pv__x1{margin:6px 0 0;padding-left:18px;color:#3b4660;font-size:13px}
+.gg-pv__x1 li{margin:1px 0}
+.gg-pv__a{display:flex;gap:8px;justify-content:space-between;margin-top:10px!important}
+.gg-pv__a a,.gg-pv__a button{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border-radius:10px;font-family:inherit;font-size:14px;font-weight:600;line-height:1;text-decoration:none;cursor:pointer}
+.gg-pv__a a{background:#0a2a66;color:#fff}
+.gg-pv__a button{background:#fff;color:#0a2a66;border:1px solid #c9d3ea;margin-left:auto}
+@media (prefers-reduced-motion:reduce){.gg-pv{transition:none}}
